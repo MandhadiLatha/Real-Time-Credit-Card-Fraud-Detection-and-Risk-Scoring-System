@@ -1,0 +1,191 @@
+## Project Overview
+
+Credit card fraud causes significant financial losses for banks and payment processors every year. Since fraudulent transactions represent only a tiny fraction of total transactions, traditional rule-based systems often produce excessive false alarms while missing sophisticated fraud patterns.
+
+This project develops an end-to-end machine learning pipeline to identify fraudulent credit card transactions using historical transaction data. In addition to fraud classification, the project generates a **Fraud Risk Score** that can be used for transaction prioritization and operational monitoring.Tableau dashboard provides business stakeholders with insights into fraud trends, transaction behavior, model outputs, and fraud risk distribution.
+
+
+# Business Problem
+
+Financial institutions need to:
+* Detect fraudulent transactions quickly
+* Reduce financial losses
+* Minimize false positives
+* Prioritize high-risk transactions for investigation
+* Monitor fraud patterns through executive dashboards
+
+
+# Project Objectives
+* Perform exploratory data analysis on credit card transactions
+* Handle severe class imbalance
+* Engineer meaningful features
+* Build multiple fraud detection models
+* Compare model performance using appropriate evaluation metrics
+* Generate Fraud Risk Scores
+* Develop an executive fraud monitoring dashboard in Tableau
+
+# Dataset
+
+Credit Card Fraud Detection Dataset
+
+### Features
+
+* V1 – V28 (PCA transformed confidential variables)
+* Time
+* Amount
+* Class
+
+  * 0 → Legitimate Transaction
+  * 1 → Fraudulent Transaction
+
+
+# Project Workflow
+
+Data Collection
+        │
+        ▼
+Data Cleaning
+        │
+        ▼
+Exploratory Data Analysis
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
+Train/Test Split
+        │
+        ▼
+Handle Class Imbalance
+        │
+        ▼
+Model Building
+        │
+        ▼
+Model Evaluation
+        │
+        ▼
+Fraud Risk Score Generation
+        │
+        ▼
+Tableau Executive Dashboard
+
+# Exploratory Data Analysis
+* Class distribution
+* Transaction amount analysis
+* Fraud vs Non-Fraud comparison
+* Correlation analysis
+* Feature distribution
+* Outlier identification
+
+### Key Findings
+
+* Fraud transactions account for approximately **0.17%** of total transactions.
+* The dataset is extremely imbalanced.
+* Fraudulent transactions are generally concentrated in lower transaction value ranges.
+* Transaction amount alone is not a reliable predictor.
+* PCA-transformed variables prevent direct business interpretation.
+
+# Feature Engineering
+* Missing value verification
+* Feature scaling
+* Target separation
+* Train/Test split
+
+
+# Handling Class Imbalance
+Since fraud cases are extremely rare, the project applies techniques to address class imbalance before model training.
+Evaluation focuses on metrics that are more informative than overall accuracy.
+
+# Machine Learning Models
+
+The following supervised learning algorithms were evaluated:
+* Logistic Regression
+* Random Forest
+* XGBoost
+
+# Evaluation Metrics
+
+Because the dataset is highly imbalanced, the following metrics were used:
+* Precision
+* Recall
+* F1 Score
+* ROC-AUC
+* Precision-Recall AUC
+* Confusion Matrix
+
+Accuracy was not used as the primary evaluation metric because it can be misleading for highly imbalanced datasets.
+
+# Fraud Risk Scoring
+
+Instead of only predicting whether a transaction is fraudulent, the model generates a **Fraud Risk Score** using predicted probabilities.
+Example:
+
+| Probability | Risk Level  |
+| ----------- | ----------- |
+| 0.00 – 0.30 | Low Risk    |
+| 0.30 – 0.70 | Medium Risk |
+| 0.70 – 1.00 | High Risk   |
+
+This allows fraud analysts to prioritize investigations based on estimated fraud likelihood.
+
+# Tableau Executive Dashboard
+
+The dashboard includes:
+
+* Total Transactions
+* Fraudulent Transactions
+* Legitimate Transactions
+* Fraud Percentage
+* Fraud by Transaction Amount
+* Fraud Risk Distribution
+* Model Performance Summary
+* Fraud Trend Analysis
+* High-Risk Transaction Monitoring
+
+
+### Programming
+
+* Python
+
+### Libraries
+
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
+* XGBoost
+* Imbalanced-learn
+
+### Business Intelligence
+* Tableau
+
+### Development Environment
+* Jupyter Notebook
+
+
+# Business Impact
+
+This solution can help financial institutions:
+
+* Reduce fraud losses
+* Improve fraud analyst productivity
+* Prioritize high-risk transactions
+* Reduce false-positive investigations
+* Enhance fraud monitoring using interactive dashboards
+* Support data-driven fraud prevention strategies
+
+
+# Key Learning Outcomes
+
+This project demonstrates expertise in:
+
+* Exploratory Data Analysis
+* Imbalanced Classification
+* Feature Engineering
+* Machine Learning Model Development
+* Model Evaluation
+* Fraud Risk Scoring
+* Business Intelligence Dashboard Development
+* End-to-End Data Science Workflow
